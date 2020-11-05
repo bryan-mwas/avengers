@@ -1,0 +1,22 @@
+type Query {
+  getAvengers: [Avenger]
+  avenger(id: String!): Avenger!
+}
+
+type Avenger {
+  _id: String
+  name: String
+  age: Int
+  universe: String
+  createdAt: String
+}
+
+input CreateAvengerInput {
+  name: String!
+  age: Int!
+  universe: String!
+}
+
+type Mutation {
+  createAvenger(input: CreateAvengerInput): Avenger
+}
